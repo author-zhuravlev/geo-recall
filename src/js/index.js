@@ -69,7 +69,7 @@ const getAdrress = async (coords) => {
 
 const openBalloon = (dataClick) => {
     myMap.balloon.open(
-        dataClick.coords,
+        dataClick[0].coords,
         dataClick,
         {
             layout: createBalloonTemplate(),
@@ -91,10 +91,12 @@ const clickOnMap = async (e) => {
     const coords = e.get('coords');
     const adress = await getAdrress(coords);
     
-    const dataClick = {
-        coords,
-        adress
-    }
+    const dataClick = [
+        {
+            coords,
+            adress
+        }
+    ];
 
     showBalloon(dataClick);
 };
@@ -197,20 +199,18 @@ const addRecall = async (e) => {
 
     if (checkInputs(inputValues)) {
         const date = getDate();
-        // || dataClick.geometry._coordinates
-        // await getAdrress(coords)
+        const coords = dataClick[0] ? dataClick[0].coords : dataClick.geometry._coordinates;
+        const adress = dataClick[0] ? dataClick[0].adress : await getAdrress(coords);
 
-        console.log(dataClick);
-        /////////////////////////////////////////////////////////////////////////////////////
         const data = {
-            coords: dataClick.coords || dataClick[0].coords,
+            coords: coords,
             name: inputValues.name,
             place: inputValues.place,
             impression: inputValues.impression,
-            adress: dataClick.adress || dataClick[0].adress,
+            adress: adress,
             date
         };
-        ////////////////////////////////////////////////////////////////////////////////////////
+
         addNewDataToLocalStorage(data);
 
         const placemark = createPlacemark(data);
