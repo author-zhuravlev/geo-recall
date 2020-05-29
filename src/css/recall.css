@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.recall {
+    border-radius: 10px;
+    min-width: 400px;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.recall .header {
+    background: #f34324;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+}
+
+.recall .header .adress img {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+}
+
+.recall .header .btn-close {
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer; 
+    border: none;
+    background: inherit;
+    outline: none;
+    color: #fff;
+}
+
+.recall .wrapp {
+    padding: 20px;
+}
+
+.recall .wrapp ul.recall-content {
+    min-height: 120px;
+}
+
+.recall .wrapp .recall-content li.recall-item {
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+
+.recall .wrapp .your-recall {
+    display: flex;
+    flex-direction: column;
+}
+
+.recall .wrapp .your-recall h3 {
+    margin: 15px 0px;
+    text-align: center;
+}
+
+.recall .wrapp .your-recall input,
+.recall .wrapp .your-recall textarea {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #b0b3b0;
+    margin-bottom: 15px;
+}
+
+.recall .wrapp .btn-add-recall {
+    display: block;
+    margin: 0 auto;
+    background: #f34324;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    cursor: pointer;
+    right: 0;
+    outline: none;
+}

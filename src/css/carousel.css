@@ -1,0 +1,15 @@
+.carousel-header .place, .carousel-header .impression {
+    margin-bottom: 10px;
+}
+
+.carousel-header a.carousel-link {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.carousell .date {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
